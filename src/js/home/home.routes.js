@@ -7,7 +7,7 @@ export default function routes($stateProvider) {
     .state('home', {
       url: '/',
       template: require('./home.html'),
-      controller: 'Home',
+      controller: 'HomeController',
       controllerAs: 'home'
     });
 }

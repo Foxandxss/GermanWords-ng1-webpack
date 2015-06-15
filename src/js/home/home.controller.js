@@ -1,6 +1,6 @@
 'use strict';
 
-export default class Home {
+export default class HomeController {
   constructor() {
     this.name = 'Fox';
   }

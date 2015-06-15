@@ -3,9 +3,9 @@
 import angular from 'angular';
 
 import routing from './home.routes';
-import Home from './home.controller';
+import HomeController from './home.controller';
 
 export default angular.module('home', [])
   .config(routing)
-  .controller('Home', Home)
+  .controller('HomeController', HomeController)
   .name;
