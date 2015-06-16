@@ -6,7 +6,7 @@ import home from './index';
 describe('Controller: Home', function() {
   var $controller, ctrl, auth, words;
 
-  beforeEach(angular.mock.module('app.home'));
+  beforeEach(angular.mock.module(home.name));
 
   beforeEach(angular.mock.inject(function(_$controller_, _auth_, _words_) {
     auth = _auth_;
