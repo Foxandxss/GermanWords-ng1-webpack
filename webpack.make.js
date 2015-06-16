@@ -112,6 +112,21 @@ module.exports = function makeWebpackConfig (options) {
     }]
   };
 
+  // ISPARTA LOADER
+  // Reference: https://github.com/ColCh/isparta-instrumenter-loader
+  // Instrument JS files with Isparta for subsequent code coverage reporting
+  // Skips node_modules and files that end with .test.js
+  if (TEST) {
+    config.module.preLoaders.push({
+      test: /\.js$/,
+      exclude: [
+        /node_modules/,
+        /\.test\.js$/
+      ],
+      loader: 'isparta-instrumenter'
+    })
+  }
+
   // CSS LOADER
   // Reference: https://github.com/webpack/css-loader
   // Allow loading css through js
