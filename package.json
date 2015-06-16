@@ -1,25 +1,23 @@
 {
+  "name": "germanwords-ng1-webpack",
+  "version": "1.0.0",
+  "description": "A workflow for Angular made with Webpack",
   "scripts": {
     "build": "webpack --config webpack.build.js --bail -p",
     "dev": "node node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress",
-    "test": "npm run test:unit",
-    "test:unit": "karma start",
-    "test:unit:live": "karma start --auto-watch --no-single-run"
+    "test": "karma start",
+    "test:live": "karma start --auto-watch --no-single-run"
   },
-  "devDependencies": {
-    "angular-mocks": "^1.4.1",
-    "isparta-instrumenter-loader": "^0.2.1",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.36",
-    "karma-coverage": "^0.4.2",
-    "karma-jasmine": "^0.3.5",
-    "karma-phantomjs-launcher": "^0.2.0",
-    "karma-sourcemap-loader": "^0.3.5",
-    "karma-spec-reporter": "0.0.19",
-    "karma-webpack": "^1.5.1",
-    "null-loader": "^0.1.1",
-    "phantomjs": "^1.9.17"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Foxandxss/GermanWords-ng1-webpack.git"
   },
+  "author": "Jesus Rodriguez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Foxandxss/GermanWords-ng1-webpack/issues"
+  },
+  "homepage": "https://github.com/Foxandxss/GermanWords-ng1-webpack",
   "dependencies": {
     "angular": "^1.3.16",
     "angular-ui-router": "^0.2.15",
@@ -39,5 +37,19 @@
     "style-loader": "^0.12.3",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.9.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.1",
+    "isparta-instrumenter-loader": "^0.2.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.36",
+    "karma-coverage": "^0.4.2",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-spec-reporter": "0.0.19",
+    "karma-webpack": "^1.5.1",
+    "null-loader": "^0.1.1",
+    "phantomjs": "^1.9.17"
   }
 }
