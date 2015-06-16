@@ -1,7 +1,7 @@
 const angular = require('angular');
 require('angular-mocks/angular-mocks');
 
-import home from './home.module';
+import home from './index';
 
 describe('Controller: Home', function() {
   var $controller, ctrl, auth, words;
