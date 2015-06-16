@@ -1,7 +1,9 @@
 'use strict';
 
 // Modules
+var webpack = require('webpack');
 var autoprefixer = require('autoprefixer-core');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function makeWebpackConfig (options) {
@@ -45,7 +47,7 @@ module.exports = function makeWebpackConfig (options) {
   } else {
     config.output = {
       // Absolute output directory
-      path: __dirname + '/src',
+      path: __dirname + '/dist',
 
       // Output path from the view of the page
       // Uses webpack-dev-server in development
@@ -123,11 +125,22 @@ module.exports = function makeWebpackConfig (options) {
     //
     // Reference: https://github.com/webpack/style-loader
     // Use style-loader in development for hot-loading
-    loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+    loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
   };
 
   // Add cssLoader to the loader list
   config.module.loaders.push(cssLoader);
+
+  /**
+   * PostCSS
+   * Reference: https://github.com/postcss/autoprefixer-core
+   * Add vendor prefixes to your css
+   */
+  config.postcss = [
+    autoprefixer({
+      browsers: ['last 2 version']
+    })
+  ]
 
   /**
    * Plugins
@@ -142,6 +155,36 @@ module.exports = function makeWebpackConfig (options) {
       disable: !BUILD || TEST
     })
   ];
+
+  // Skip rendering index.html in test mode
+  if (!TEST) {
+    // Reference: https://github.com/ampedandwired/html-webpack-plugin
+    // Render index.html
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        inject: 'body',
+        minify: BUILD
+      })
+    )
+  }
+
+  // Add build specific plugins
+  if (BUILD) {
+    config.plugins.push(
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
+      // Only emit files when there are no errors
+      new webpack.NoErrorsPlugin(),
+
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
+      // Dedupe modules in the output
+      new webpack.optimize.DedupePlugin(),
+
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+      // Minify all javascript, switch loaders to minimizing mode
+      new webpack.optimize.UglifyJsPlugin()
+    )
+  }
 
   /**
    * Dev server configuration
