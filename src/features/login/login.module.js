@@ -6,7 +6,6 @@ import routing from './login.routes';
 import LoginController from './login.controller';
 import authService from '../../services/auth.service';
 
-export default angular.module('app.login', [authService])
+export default angular.module('app.login', [authService.name])
   .config(routing)
-  .controller('LoginController', LoginController)
-  .name;
+  .controller('LoginController', LoginController);

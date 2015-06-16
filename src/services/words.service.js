@@ -15,5 +15,4 @@ class Words {
 Words.$inject = ['$http'];
 
 export default angular.module('services.words', [])
-  .service('words', Words)
-  .name;
+  .service('words', Words);

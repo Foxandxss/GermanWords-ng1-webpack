@@ -8,5 +8,5 @@ import login from './features/login/login.module';
 
 import routing from './app.config';
 
-angular.module('app', [uirouter, home, login])
+angular.module('app', [uirouter, home.name, login.name])
   .config(routing);

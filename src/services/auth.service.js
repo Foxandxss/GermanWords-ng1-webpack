@@ -55,5 +55,4 @@ function config($httpProvider) {
 export default angular.module('services.auth', [])
   .service('auth', Auth)
   .service('authInterceptor', AuthInterceptor)
-  .config(config)
-  .name;
+  .config(config);
