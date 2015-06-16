@@ -10,7 +10,7 @@
 </div>
 <div ng-if="home.isAuth">
   <p>Welcome back {{home.user.username}}</p>
-  <a href="#" ng-click="logout($event)">Logout</a>
+  <a href="#" ng-click="home.logout($event)">Logout</a>
 </div>
 <div ng-if="!home.isAuth">
   <a ui-sref="login">Login</a>
