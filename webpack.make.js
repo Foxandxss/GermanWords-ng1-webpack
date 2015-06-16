@@ -143,5 +143,20 @@ module.exports = function makeWebpackConfig (options) {
     })
   ];
 
+  /**
+   * Dev server configuration
+   * Reference: http://webpack.github.io/docs/configuration.html#devserver
+   * Reference: http://webpack.github.io/docs/webpack-dev-server.html
+   */
+  config.devServer = {
+    contentBase: './src',
+    stats: {
+      modules: false,
+      cached: false,
+      colors: true,
+      chunk: false
+    }
+  };
+
   return config;
 };

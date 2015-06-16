@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node node_modules/.bin/webpack-dev-server --content-base src --hot"
+    "start": "node node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress"
   },
   "devDependencies": {
 
