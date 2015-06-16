@@ -20,7 +20,6 @@ module.exports = function karmaConfig (config) {
     ],
 
     files: [
-      //'node_modules/angular-mocks/angular-mocks.js',
       // Grab all files in the app folder that contain .test.
       'src/tests.webpack.js'
     ],
@@ -46,5 +45,5 @@ module.exports = function karmaConfig (config) {
     },
 
     webpack: webpackConfig
-  })
+  });
 };
