@@ -20,15 +20,16 @@ module.exports = function karmaConfig (config) {
     ],
 
     files: [
+      //'node_modules/angular-mocks/angular-mocks.js',
       // Grab all files in the app folder that contain .test.
-      'src/**/*.test.*'
+      'src/tests.webpack.js'
     ],
 
     preprocessors: {
       // Reference: http://webpack.github.io/docs/testing.html
       // Reference: https://github.com/webpack/karma-webpack
       // Convert files with webpack and load sourcemaps
-      'src/**/*.test.*': ['webpack', 'sourcemap']
+      'src/tests.webpack.js': ['webpack', 'sourcemap']
     },
 
     browsers: [
