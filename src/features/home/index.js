@@ -7,6 +7,7 @@ import HomeController from './home.controller';
 import wordsService from '../../services/words.service';
 import authService from '../../services/auth.service';
 
-export default angular.module('app.home', [wordsService.name, authService.name])
+export default angular.module('app.home', [wordsService, authService])
   .config(routing)
-  .controller('HomeController', HomeController);
+  .controller('HomeController', HomeController)
+  .name;

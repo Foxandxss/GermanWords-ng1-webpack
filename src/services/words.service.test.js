@@ -3,7 +3,7 @@ import wordsModule from './words.service';
 describe('Service: auth', function() {
   var $httpBackend, $q, $rootScope, words;
 
-  beforeEach(angular.mock.module(wordsModule.name));
+  beforeEach(angular.mock.module(wordsModule));
 
   beforeEach(angular.mock.inject(function(_$httpBackend_, _$q_, _$rootScope_, _words_) {
     $httpBackend = _$httpBackend_;

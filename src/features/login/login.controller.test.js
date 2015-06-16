@@ -3,7 +3,7 @@ import login from './index';
 describe('Controller: Login', function() {
   var $rootScope, $controller, $q, $state, ctrl, auth;
 
-  beforeEach(angular.mock.module(login.name));
+  beforeEach(angular.mock.module(login));
 
   beforeEach(angular.mock.inject(function(_$controller_, _$q_, _$rootScope_, _$state_, _auth_) {
     $rootScope = _$rootScope_;

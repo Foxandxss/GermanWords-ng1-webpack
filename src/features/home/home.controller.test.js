@@ -6,7 +6,7 @@ import home from './index';
 describe('Controller: Home', function() {
   var $rootScope, $controller, $q, ctrl, auth, words;
 
-  beforeEach(window.module(home.name));
+  beforeEach(window.module(home));
 
   beforeEach(window.inject(function(_$controller_, _$q_, _$rootScope_, _auth_, _words_) {
     $rootScope = _$rootScope_;

@@ -3,7 +3,7 @@ import authModule from './auth.service';
 describe('Service: auth', function() {
   var $http, $q, $rootScope, auth;
 
-  beforeEach(angular.mock.module(authModule.name));
+  beforeEach(angular.mock.module(authModule));
 
   beforeEach(angular.mock.inject(function(_$http_, _$q_, _$rootScope_, _auth_) {
     $http = _$http_;
