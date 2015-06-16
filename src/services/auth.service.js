@@ -1,6 +1,8 @@
 'use strict';
 
 import angular from 'angular';
+import uirouter from 'angular-ui-router';
+
 import jwtDecode from 'jwt-decode';
 
 class Auth {
@@ -52,7 +54,7 @@ function config($httpProvider) {
   $httpProvider.interceptors.push('authInterceptor');
 }
 
-export default angular.module('services.auth', [])
+export default angular.module('services.auth', [uirouter])
   .service('auth', Auth)
   .service('authInterceptor', AuthInterceptor)
   .config(config);

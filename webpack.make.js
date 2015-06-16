@@ -97,7 +97,7 @@ module.exports = function makeWebpackConfig (options) {
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
-      // Copy png, jpg, jpeg, gif, svg, woff, ttf, eot files to output
+      // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
       // Rename the file using the asset hash
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
@@ -128,6 +128,13 @@ module.exports = function makeWebpackConfig (options) {
     loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
   };
 
+  // Skip loading css in test mode
+  if (TEST) {
+    // Reference: https://github.com/webpack/null-loader
+    // Return an empty module
+    cssLoader.loader = 'null'
+  }
+
   // Add cssLoader to the loader list
   config.module.loaders.push(cssLoader);
 
@@ -140,7 +147,7 @@ module.exports = function makeWebpackConfig (options) {
     autoprefixer({
       browsers: ['last 2 version']
     })
-  ]
+  ];
 
   /**
    * Plugins
@@ -192,7 +199,7 @@ module.exports = function makeWebpackConfig (options) {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './src',
+    contentBase: './dist',
     stats: {
       modules: false,
       cached: false,
