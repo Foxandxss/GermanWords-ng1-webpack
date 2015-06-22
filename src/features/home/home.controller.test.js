@@ -1,14 +1,11 @@
-const angular = require('angular');
-require('angular-mocks/angular-mocks');
-
 import home from './index';
 
 describe('Controller: Home', function() {
   var $rootScope, $controller, $q, ctrl, auth, words;
 
-  beforeEach(window.module(home));
+  beforeEach(angular.mock.module(home));
 
-  beforeEach(window.inject(function(_$controller_, _$q_, _$rootScope_, _auth_, _words_) {
+  beforeEach(angular.mock.inject(function(_$controller_, _$q_, _$rootScope_, _auth_, _words_) {
     $rootScope = _$rootScope_;
     $q = _$q_;
     auth = _auth_;

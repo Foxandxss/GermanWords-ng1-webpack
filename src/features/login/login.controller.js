@@ -1,7 +1,5 @@
 'use strict';
 
-require('./login.css');
-
 export default class LoginController {
   constructor($state, auth) {
     this.$state = $state;

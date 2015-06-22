@@ -1,4 +1,4 @@
-require('bootstrap/dist/css/bootstrap.min.css');
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
