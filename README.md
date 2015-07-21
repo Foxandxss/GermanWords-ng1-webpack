@@ -33,4 +33,4 @@ For deployment:
 $ npm run build
 ```
 
-That will generate a `/dist` folder where you can point your web server.
+That will generate a `/public` folder where you can point your web server.
