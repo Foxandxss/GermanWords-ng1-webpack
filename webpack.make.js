@@ -92,7 +92,10 @@ module.exports = function makeWebpackConfig (options) {
       // Transpile .js files using babel-loader
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
-      loader: 'babel?optional[]=runtime',
+      loader: 'babel',
+      query: {
+        presets: ['es2015']
+      },
       exclude: /node_modules/
     }, {
       // ASSET LOADER
@@ -185,8 +188,7 @@ module.exports = function makeWebpackConfig (options) {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        inject: 'body',
-        minify: BUILD
+        inject: 'body'
       })
     )
   }
