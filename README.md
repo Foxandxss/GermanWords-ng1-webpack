@@ -8,7 +8,7 @@ This repository needs a backend, refer to [GermanWords-koa](https://github.com/a
 
 ```shell
 $ git clone https://github.com/Foxandxss/GermanWords-ng1-webpack
-$ cd GermanWords-ng-webpack
+$ cd GermanWords-ng1-webpack
 $ npm install
 $ npm run dev
 ```
