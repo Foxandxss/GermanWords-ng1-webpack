@@ -1,4 +1,4 @@
-# Angular 1.x + ES6 + Webpack Demo
+# Angular 1.x + ES6 + Webpack 2 Demo
 
 This repository contains a demo for the [angular-webpack-workflow](https://github.com/Foxandxss/angular-webpack-workflow).
 
@@ -10,7 +10,7 @@ This repository needs a backend, refer to [GermanWords-koa](https://github.com/a
 $ git clone https://github.com/Foxandxss/GermanWords-ng1-webpack
 $ cd GermanWords-ng1-webpack
 $ npm install
-$ npm run dev
+$ npm start
 ```
 
 Now you can navigate to http://localhost:8080 to see the app working.
@@ -22,7 +22,7 @@ The username and password for the demo is: `demo / 12345`.
 If you want to run the tests, do:
 
 ```shell
-$ npm run test
+$ npm test
 ```
 
 ## Deploy
@@ -33,4 +33,4 @@ For deployment:
 $ npm run build
 ```
 
-That will generate a `/public` folder where you can point your web server.
+That will generate a `/dist` folder where you can point your web server.
