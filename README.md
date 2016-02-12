@@ -1,6 +1,6 @@
 # Angular 1.x + ES6 + Webpack 2 Demo
 
-This repository contains a demo for the [angular-webpack-workflow](https://github.com/Foxandxss/angular-webpack-workflow).
+This repository contains a demo for the [angular-webpack](https://github.com/preboot/angular-webpack).
 
 ## Usage
 
